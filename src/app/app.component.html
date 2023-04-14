@@ -1,6 +1,3 @@
-<!-- Favorite Color: <input type="text" [formControl]="favoriteColorControl"> -->
-
-
 
 <div class="container">
   <div class="row choice">
@@ -14,16 +11,20 @@
     <div *ngFor="let user of UsersList" class="card col-3" tabindex="-1" [ngClass]="{
       'customer': (user === 'Customer'),
       'admin': (user === 'Admin'),
-      'delivery-man': (user === 'Delivery man')}">
-      <card [name] = "user"></card>
+      'delivery-man': (user === 'Delivery man'),
+      'customerfocus': (user === 'Customer' && customerModal),
+      'adminfocus': (user === 'Admin' && adminModal),
+      'delivery-manfocus': (user === 'Delivery man' && deliveryManModal)}"
+      (click)="cardClicked(user)"
+    >
+      <card [name] = "user" [cardChanged]="cardChanged" ></card>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
-      <customer></customer>
+      <customer *ngIf="customerModal"></customer>
+      <!-- <admin *ngIf="adminModal"></admin> -->
+      <!-- <delivery-man *ngIf="deliveryManModal"></delivery-man> -->
     </div>
-  </div>
-  <div class="row" *ngIf="customerModal">
-    customerModal clicked
   </div>
 </div>

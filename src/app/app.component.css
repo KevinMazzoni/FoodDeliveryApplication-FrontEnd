@@ -8,13 +8,9 @@
     margin-top: 5%;
 }
 
-.row{
-    margin-left: 15%;
-}
-
 .card{
     display: inline-block;
-    margin: 10px;
+    margin: auto;
 }
 
 .customer:hover{
@@ -22,7 +18,7 @@
     background-color: rgba(0, 255, 34, 0.646);
 }
 
-.customer:focus{
+.customerfocus{
     background-color: rgba(0, 255, 34, 0.646);
 }
 
@@ -31,7 +27,7 @@
     background-color: rgb(0, 149, 255)
 }
 
-.admin:focus{
+.adminfocus{
     background-color: rgb(0, 149, 255)
 }
 
@@ -40,7 +36,7 @@
     background-color: rgb(255, 98, 0);
 }
 
-.delivery-man:focus{
+.delivery-manfocus{
     cursor: pointer;
     background-color: rgb(255, 98, 0);
 }

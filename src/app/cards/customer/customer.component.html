@@ -1,8 +1,15 @@
-<!-- <input type="text" [formControl]="favoriteColorControl">-->
+
 <div class="container">
     <div *ngFor="let customer of customers" class="row">
-        <div class="col-9 customer">
-            {{customer.name}} || {{customer.surname}} || {{customer.address}}
+        <div class="col-11 customer">
+            <img src="../../../assets/person.png" class="person">
+            Name: {{customer.name}} | Surname: {{customer.surname}} | Address: {{customer.address}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-11 customer registration">
+            <img src="../../../assets/registration.png" class="person">
+            I want to register as a new customer
         </div>
     </div>
 </div>

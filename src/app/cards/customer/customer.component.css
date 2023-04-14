@@ -1,9 +1,24 @@
 .row{
-    margin-top: 10%;
+    margin-top: 3%;
 }
+
+.person{
+    height: 5%;
+    width: 5%;
+}
+
 .customer{
-    display: inline-block;
     margin-top: 1%;
-    border-radius: 5px;
+    margin: auto;
+    border-radius: 10px;
     background-color: rgba(0, 255, 34, 0.646);
+}
+
+.customer:hover{
+    background-color: rgba(0, 173, 23, 0.646);
+    cursor: pointer;
+}
+
+.registration{
+    text-align: center;
 }
