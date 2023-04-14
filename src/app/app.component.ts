@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { CardComponent } from './cards/card.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Food_Delivery_Application';
+  customerModal = false;
+  adminModal = false;
+  deliveryManModal = false;
+  UsersList = [
+    "Customer",
+    "Admin",
+    "Delivery man"
+  ]
+
 }

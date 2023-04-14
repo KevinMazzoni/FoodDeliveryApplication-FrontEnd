@@ -1,0 +1,8 @@
+<!-- <input type="text" [formControl]="favoriteColorControl">-->
+<div class="container">
+    <div *ngFor="let customer of customers" class="row">
+        <div class="col-9 customer">
+            {{customer.name}} || {{customer.surname}} || {{customer.address}}
+        </div>
+    </div>
+</div>

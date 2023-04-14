@@ -1,0 +1,46 @@
+.choice{
+    font-size: xx-large;
+    margin-bottom: 2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    margin-top: 5%;
+}
+
+.row{
+    margin-left: 15%;
+}
+
+.card{
+    display: inline-block;
+    margin: 10px;
+}
+
+.customer:hover{
+    cursor: pointer;
+    background-color: rgba(0, 255, 34, 0.646);
+}
+
+.customer:focus{
+    background-color: rgba(0, 255, 34, 0.646);
+}
+
+.admin:hover{
+    cursor: pointer;
+    background-color: rgb(0, 149, 255)
+}
+
+.admin:focus{
+    background-color: rgb(0, 149, 255)
+}
+
+.delivery-man:hover{
+    cursor: pointer;
+    background-color: rgb(255, 98, 0);
+}
+
+.delivery-man:focus{
+    cursor: pointer;
+    background-color: rgb(255, 98, 0);
+}
