@@ -10,9 +10,9 @@ import { Customer } from './customerInterface';
 })
 export class CustomerComponent {
 
-  @Input() name = ''
-
   customers: Array<Customer> = []
+  registrationModal = false
+  favoriteColorControl = new FormControl('')
 
   constructor(private utilsService: UtilsService){}
 
@@ -21,6 +21,18 @@ export class CustomerComponent {
       console.log("Customers: ", response)
       this.customers = response.customers
     });
+  }
+
+  registration(){
+    this.registrationModal = true
+  }
+
+  exit(){
+    this.registrationModal = false
+  }
+
+  submit(){
+    console.log("Submit button clicked")
   }
 
 }

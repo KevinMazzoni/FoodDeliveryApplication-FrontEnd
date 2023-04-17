@@ -1,6 +1,6 @@
 
 <div class="container">
-    <div class="row customers">
+    <div class="row customers" *ngIf="!registrationModal">
         <div *ngFor="let customer of customers" class="col-3">
             <!-- <div class="col-11 customer">
                 <img src="../../../assets/person.png" class="person">
@@ -13,11 +13,31 @@
             </customer-card>
         </div>
     </div>
-    <hr class="hr">
-    <div class="row registration">
-        <div class="col-11 customer">
+    <hr class="hr" *ngIf="!registrationModal">
+    <div class="row registration" *ngIf="!registrationModal">
+        <div class="col-11 customer" (click)="registration()">
             <img src="../../../assets/registration.png" class="person">
             I want to register as a new customer
+        </div>
+    </div>
+    <div class="row registration" *ngIf="registrationModal">
+        <div class="col-11 registrationModal">
+            <input type="text" [formControl]="favoriteColorControl"
+            class="name" placeholder="Name">
+            <input type="text" [formControl]="favoriteColorControl"
+            class="surname" placeholder="Surame">
+            <input type="text" [formControl]="favoriteColorControl"
+            class="surname" placeholder="Address">
+        </div>
+    </div>
+    <div class="row buttons" *ngIf="registrationModal">
+        <div class="col-5 submit">
+            <img src="../../../assets/submit-order.png" class="person">
+            Submit
+        </div>
+        <div class="col-5 exit-button" (click)="exit()">
+            <img src="../../../assets/exit.png" class="person">
+            Exit registration
         </div>
     </div>
 </div>

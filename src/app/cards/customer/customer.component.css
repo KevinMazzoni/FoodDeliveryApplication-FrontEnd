@@ -8,7 +8,6 @@
 
 .row{
     margin-top: 3%;
-    /* background-color: blue; */
 }
 
 .hr{
@@ -48,8 +47,63 @@
     /* background-color: rgba(0, 255, 34, 0.646); */
 }
 
+.registrationModal{
+    margin-top: 1%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: white;
+}
+
 .customers{
     margin-left: 5px;
     margin-right: 5px;
     text-align: center;
 }
+
+.name{
+    height: 10vh;
+    width: 100%;
+    border-radius: 20px;
+    border-style: groove;
+    font-size: x-large;
+}
+
+.surname{
+    height: 10vh;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 5%;
+    border-style: groove;
+    font-size: x-large;
+}
+
+.buttons{
+    margin: auto;
+    margin-bottom: 40px;
+    /* display: inline-block; */
+    text-align: center;
+    font-size: x-large;
+}
+
+.submit{
+    margin-top: 1%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.submit:hover{
+    cursor: pointer;
+    background-color: rgba(0, 173, 23, 0.646);    
+}
+
+.exit-button{
+    margin-top: 1%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.exit-button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.64);
+}
+
