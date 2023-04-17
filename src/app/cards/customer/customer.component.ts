@@ -9,71 +9,18 @@ import { Customer } from './customerInterface';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent {
-  title="card"
+
   @Input() name = ''
 
-  customers: Array<Customer> = [
-    {
-      customer_id:
-      {
-        name: "Jhonny",
-        surname: "Stecchino",
-        address: "Via Golgi, 7, 40123, Milano"
-      }
-    },
-    {
-      customer_id:
-      {
-        name: "Mario",
-        surname: "Rossi",
-        address: "Via Larga, 9, 40000, Bologna"
-      }
-    },
-    {
-      customer_id:
-      {
-        name: "Giovanni",
-        surname: "Neri",
-        address: "Via Mattei, 10, 40567, Roma"
-      }
-    },
-    {
-      customer_id:
-      {
-        name: "Giovanni",
-        surname: "Neri",
-        address: "Via Mattei, 10, 40567, Roma"
-      }
-    },
-    {
-      customer_id:
-      {
-        name: "Giovanni",
-        surname: "Neri",
-        address: "Via Mattei, 10, 40567, Roma"
-      }
-    },
-    {
-      customer_id:
-      {
-        name: "Giovanni",
-        surname: "Neri",
-        address: "Via Mattei, 10, 40567, Roma"
-      }
-    }
-  ]
-  // customers: Array<any> = [];
+  customers: Array<Customer> = []
 
-  constructor(private utilsService: UtilsService){
-
-  }
+  constructor(private utilsService: UtilsService){}
 
   ngOnInit(){
-    this.utilsService.getCustomers().subscribe(response => {
+    this.utilsService.getCustomers().subscribe((response: any) => {
       console.log("Customers: ", response)
-      // this.customers.push(response)
+      this.customers = response.customers
     });
   }
 
-  favoriteColorControl = new FormControl('');
 }
