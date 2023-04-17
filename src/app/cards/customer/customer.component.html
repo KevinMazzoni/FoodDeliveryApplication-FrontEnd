@@ -1,9 +1,16 @@
 
 <div class="container">
-    <div *ngFor="let customer of customers" class="row">
-        <div class="col-11 customer">
-            <img src="../../../assets/person.png" class="person">
-            Name: {{customer.name}} | Surname: {{customer.surname}} | Address: {{customer.address}}
+    <div class="row customers">
+        <div *ngFor="let customer of customers" class="col-3">
+            <!-- <div class="col-11 customer">
+                <img src="../../../assets/person.png" class="person">
+                Name: {{customer.name}} | Surname: {{customer.surname}} | Address: {{customer.address}}
+            </div> -->
+            <customer-card class="customer-card" tabindex="-1"
+                [name]="customer.name"
+                [surname]="customer.surname"
+                [address]="customer.address">
+            </customer-card>
         </div>
     </div>
     <hr class="hr">

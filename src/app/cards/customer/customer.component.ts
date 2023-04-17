@@ -25,6 +25,21 @@ export class CustomerComponent {
       name: "Giovanni",
       surname: "Neri",
       address: "Via Mattei, 10, 40567, Roma"
+    },
+    {
+      name: "Giovanni",
+      surname: "Neri",
+      address: "Via Mattei, 10, 40567, Roma"
+    },
+    {
+      name: "Giovanni",
+      surname: "Neri",
+      address: "Via Mattei, 10, 40567, Roma"
+    },
+    {
+      name: "Giovanni",
+      surname: "Neri",
+      address: "Via Mattei, 10, 40567, Roma"
     }
   ]
   favoriteColorControl = new FormControl('');

@@ -2,11 +2,13 @@
     margin-top: 5%;
     border: groove;
     border-radius: 10px;
-    background-color: rgba(0, 255, 34, 0.337);
+    /* background-color: rgba(0, 255, 34, 0.337); */
+    background-color: white;
 }
 
 .row{
     margin-top: 3%;
+    /* background-color: blue; */
 }
 
 .hr{
@@ -22,7 +24,13 @@
     margin-top: 1%;
     margin: auto;
     border-radius: 10px;
-    background-color: rgba(0, 255, 34, 0.523);
+    background-color: white;
+    /* background-color: rgba(0, 255, 34, 0.523); */
+}
+
+.customer-card{
+    display: inline-block;
+    margin: auto;
 }
 
 .customer:hover{
@@ -32,9 +40,16 @@
 }
 
 .registration{
+    /* margin-top: 3%; */
     text-align: center;
     font-size: 100%;
     padding-top: 2%;
     padding-bottom: 5%;
     /* background-color: rgba(0, 255, 34, 0.646); */
+}
+
+.customers{
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
 }
