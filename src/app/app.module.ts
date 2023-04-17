@@ -1,12 +1,14 @@
 import { Component, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './cards/card.component';
 import { CustomerCardComponent } from './cards/customer/customer-card/customer-card.component';
 import { CustomerComponent } from './cards/customer/customer.component';
+import { UtilsService } from './utils.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { CustomerComponent } from './cards/customer/customer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UtilsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

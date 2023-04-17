@@ -1,5 +1,8 @@
 export interface Customer {
-    name: string;
-    surname: string;
-    address: string;
+    customer_id:
+    {
+        name: string;
+        surname: string;
+        address: string;
+    }
 }

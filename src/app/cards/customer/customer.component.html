@@ -7,9 +7,9 @@
                 Name: {{customer.name}} | Surname: {{customer.surname}} | Address: {{customer.address}}
             </div> -->
             <customer-card class="customer-card" tabindex="-1"
-                [name]="customer.name"
-                [surname]="customer.surname"
-                [address]="customer.address">
+                [name]="customer.customer_id['name']"
+                [surname]="customer.customer_id['surname']"
+                [address]="customer.customer_id['address']">
             </customer-card>
         </div>
     </div>

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Customer } from './customerInterface'
+import { UtilsService } from 'src/app/utils.service';
+import { Customer } from './customerInterface';
 
 @Component({
   selector: 'customer',
@@ -10,37 +11,69 @@ import { Customer } from './customerInterface'
 export class CustomerComponent {
   title="card"
   @Input() name = ''
-  @Input() customers: Array<Customer> = [
+
+  customers: Array<Customer> = [
     {
-      name: "Jhonny",
-      surname: "Stecchino",
-      address: "Via Golgi, 7, 40123, Milano"
+      customer_id:
+      {
+        name: "Jhonny",
+        surname: "Stecchino",
+        address: "Via Golgi, 7, 40123, Milano"
+      }
     },
     {
-      name: "Mario",
-      surname: "Rossi",
-      address: "Via Larga, 9, 40000, Bologna"
+      customer_id:
+      {
+        name: "Mario",
+        surname: "Rossi",
+        address: "Via Larga, 9, 40000, Bologna"
+      }
     },
     {
-      name: "Giovanni",
-      surname: "Neri",
-      address: "Via Mattei, 10, 40567, Roma"
+      customer_id:
+      {
+        name: "Giovanni",
+        surname: "Neri",
+        address: "Via Mattei, 10, 40567, Roma"
+      }
     },
     {
-      name: "Giovanni",
-      surname: "Neri",
-      address: "Via Mattei, 10, 40567, Roma"
+      customer_id:
+      {
+        name: "Giovanni",
+        surname: "Neri",
+        address: "Via Mattei, 10, 40567, Roma"
+      }
     },
     {
-      name: "Giovanni",
-      surname: "Neri",
-      address: "Via Mattei, 10, 40567, Roma"
+      customer_id:
+      {
+        name: "Giovanni",
+        surname: "Neri",
+        address: "Via Mattei, 10, 40567, Roma"
+      }
     },
     {
-      name: "Giovanni",
-      surname: "Neri",
-      address: "Via Mattei, 10, 40567, Roma"
+      customer_id:
+      {
+        name: "Giovanni",
+        surname: "Neri",
+        address: "Via Mattei, 10, 40567, Roma"
+      }
     }
   ]
+  // customers: Array<any> = [];
+
+  constructor(private utilsService: UtilsService){
+
+  }
+
+  ngOnInit(){
+    this.utilsService.getCustomers().subscribe(response => {
+      console.log("Customers: ", response)
+      // this.customers.push(response)
+    });
+  }
+
   favoriteColorControl = new FormControl('');
 }
