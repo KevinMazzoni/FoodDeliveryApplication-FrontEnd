@@ -12,6 +12,7 @@ export class CustomerComponent {
 
   customers: Array<Customer> = []
   registrationModal = false
+  customerModal = false
   favoriteColorControl = new FormControl('')
 
   constructor(private utilsService: UtilsService){}
@@ -32,7 +33,14 @@ export class CustomerComponent {
   }
 
   submit(){
+    //TODO
+    //Agganciare APi
     console.log("Submit button clicked")
+  }
+
+  openCustomer(name: string, surname: string, address: string){
+    console.log("Customer clicked! Name: ", name, " surname: ", surname, " address: ", address)
+    this.customerModal = true;
   }
 
 }

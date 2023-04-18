@@ -1,20 +1,24 @@
 
 <div class="container">
-    <div class="row customers" *ngIf="!registrationModal">
+    <div class="row customers" *ngIf="!registrationModal && !customerModal">
         <div *ngFor="let customer of customers" class="col-3">
             <!-- <div class="col-11 customer">
                 <img src="../../../assets/person.png" class="person">
                 Name: {{customer.name}} | Surname: {{customer.surname}} | Address: {{customer.address}}
             </div> -->
             <customer-card class="customer-card" tabindex="-1"
-                [name]="customer.customer_id['name']"
-                [surname]="customer.customer_id['surname']"
-                [address]="customer.customer_id['address']">
+                [name]="customer.customer_id.name"
+                [surname]="customer.customer_id.surname"
+                [address]="customer.customer_id.address"
+                (click)="openCustomer(customer.customer_id.name, customer.customer_id.surname, customer.customer_id.address)">
+                <!-- <a routerLink="/homepage" routerLinkActive="active" ariaCurrentWhenActive="page">
+                    Homepage
+                </a> -->
             </customer-card>
         </div>
     </div>
-    <hr class="hr" *ngIf="!registrationModal">
-    <div class="row registration" *ngIf="!registrationModal">
+    <hr class="hr" *ngIf="!registrationModal && !customerModal">
+    <div class="row registration" *ngIf="!registrationModal && !customerModal">
         <div class="col-11 customer" (click)="registration()">
             <img src="../../../assets/registration.png" class="person">
             I want to register as a new customer

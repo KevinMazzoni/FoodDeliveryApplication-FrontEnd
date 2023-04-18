@@ -9,13 +9,15 @@ import { CardComponent } from './cards/card.component';
 import { CustomerCardComponent } from './cards/customer/customer-card/customer-card.component';
 import { CustomerComponent } from './cards/customer/customer.component';
 import { UtilsService } from './utils.service';
+import { CustomerPageComponent } from './cards/customer/customer-page/customer-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     CustomerComponent,
-    CustomerCardComponent
+    CustomerCardComponent,
+    CustomerPageComponent
   ],
   imports: [
     BrowserModule,
