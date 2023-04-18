@@ -107,3 +107,25 @@
     background-color: rgba(255, 0, 0, 0.64);
 }
 
+/*Specific customer*/
+.specific-customer-row{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.welcome{
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.order{
+    border-radius: 10px;
+    border-style: groove;
+}
+
+.order:hover{
+    cursor: pointer;
+    background-color: rgba(0, 173, 23, 0.646);
+}

@@ -1,22 +1,39 @@
 
 <div class="container">
     <div class="row customers" *ngIf="!registrationModal && !customerModal">
+        <!--All the customers-->
         <div *ngFor="let customer of customers" class="col-3">
             <!-- <div class="col-11 customer">
                 <img src="../../../assets/person.png" class="person">
                 Name: {{customer.name}} | Surname: {{customer.surname}} | Address: {{customer.address}}
             </div> -->
+            <!-- <a routerLink="/customer-page" routerLinkActive="active" ariaCurrentWhenActive="page"> -->
             <customer-card class="customer-card" tabindex="-1"
                 [name]="customer.customer_id.name"
                 [surname]="customer.customer_id.surname"
                 [address]="customer.customer_id.address"
                 (click)="openCustomer(customer.customer_id.name, customer.customer_id.surname, customer.customer_id.address)">
-                <!-- <a routerLink="/homepage" routerLinkActive="active" ariaCurrentWhenActive="page">
-                    Homepage
-                </a> -->
             </customer-card>
+            <!-- </a> -->
         </div>
     </div>
+
+    <!--Specific customer-->
+    <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">
+        <div class="col-12 welcome">
+            Welcome customer XXX, select if you want to place orders or check the status of your orders
+        </div>
+    </div>
+    <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">
+        <div class="col-5 order">
+            Place order
+        </div>
+        <div class="col-2"></div>
+        <div class="col-5 order">
+            Check orders
+        </div>
+    </div>
+
     <hr class="hr" *ngIf="!registrationModal && !customerModal">
     <div class="row registration" *ngIf="!registrationModal && !customerModal">
         <div class="col-11 customer" (click)="registration()">
