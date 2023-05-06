@@ -97,8 +97,7 @@
 }
 
 .exit-button{
-    margin-top: 1%;
-    margin: auto;
+    width: 85%;
     border-radius: 10px;
 }
 
@@ -128,4 +127,14 @@
 .order:hover{
     cursor: pointer;
     background-color: rgba(0, 173, 23, 0.646);
+}
+
+.submit-button{
+    width: 85%;
+    border-radius: 10px;
+}
+
+.submit-button:hover{
+    /* cursor: pointer; */
+    background-color: rgba(0, 173, 23, 0.646);    
 }

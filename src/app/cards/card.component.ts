@@ -13,10 +13,10 @@ export class CardComponent {
 
 
   ngOnInit(){
-    // this.cardChanged.subscribe(response => {
-    //   console.log("Component ", this.name, " re-initialized with value detected: ", response)
-    //   this.toDisplay = response
-    // });
+    this.cardChanged.subscribe(response => {
+      console.log("Component ", this.name, " re-initialized with value detected: ", response)
+      this.toDisplay = response
+    });
 
   }
 
