@@ -10,6 +10,7 @@ import { CustomerCardComponent } from './cards/customer/customer-card/customer-c
 import { CustomerComponent } from './cards/customer/customer.component';
 import { UtilsService } from './utils.service';
 import { CustomerPageComponent } from './cards/customer/customer-page/customer-page.component';
+import { ItemsComponent } from './cards/customer/items/items.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CustomerPageComponent } from './cards/customer/customer-page/customer-p
     CardComponent,
     CustomerComponent,
     CustomerCardComponent,
-    CustomerPageComponent
+    CustomerPageComponent,
+    ItemsComponent
   ],
   imports: [
     BrowserModule,

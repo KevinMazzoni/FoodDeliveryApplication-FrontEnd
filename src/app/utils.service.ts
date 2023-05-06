@@ -8,6 +8,7 @@ import { Customer } from './cards/customer/customerInterface';
 export class UtilsService {
 
   getCustomersURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/demo';
+  getItemsURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/items';
   newCustomerURL: string = 'https://';
 
   constructor(private httpClient: HttpClient) { }
@@ -17,6 +18,9 @@ export class UtilsService {
     return this.httpClient.get<Customer>(this.getCustomersURL)
   }
 
+  getItems(){
+    return this.httpClient.get(this.getItemsURL)
+  }
   /** POST: add a new customer to the database */
   newCustomer(customer: Customer): Observable<Customer>{
     console.log("Ricevuto customer: ", customer)

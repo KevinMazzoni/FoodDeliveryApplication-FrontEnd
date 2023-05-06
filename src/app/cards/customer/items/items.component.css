@@ -1,0 +1,13 @@
+.list{
+    border-style: groove;
+    border-radius: 10px;
+}
+
+.quantity{
+    width: 50%;
+    border-radius: 10px;
+}
+
+.field{
+    margin-bottom: 5px;
+}

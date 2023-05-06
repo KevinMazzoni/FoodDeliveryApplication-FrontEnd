@@ -25,12 +25,21 @@
         </div>
     </div>
     <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">
-        <div class="col-5 order">
+        <div class="col-5 order" (click)="placeOrder()">
             Place order
         </div>
         <div class="col-2"></div>
-        <div class="col-5 order">
+        <div class="col-5 order" (click)="checkOrders()">
             Check orders
+        </div>
+    </div>
+
+    <div class="row" *ngIf="placeOrderModal">
+        <div class="col-12">
+            <items></items>
+        </div>
+        <div class="col-12">
+
         </div>
     </div>
 

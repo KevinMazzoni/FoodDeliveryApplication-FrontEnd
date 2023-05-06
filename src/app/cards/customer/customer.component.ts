@@ -13,6 +13,8 @@ export class CustomerComponent {
   customers: Array<Customer> = []
   registrationModal = false
   customerModal = false
+  placeOrderModal = false
+  checkOrdersModal = false
   favoriteColorControl = new FormControl('')
 
   @Input() cardChanged: EventEmitter<any> = new EventEmitter()
@@ -27,6 +29,9 @@ export class CustomerComponent {
     this.cardChanged.subscribe(response => {
       this.registrationModal = false
       this.customerModal = false
+      this.name.setValue('');
+      this.surname.setValue('');
+      this.address.setValue('');
     });
 
     this.utilsService.getCustomers().subscribe((response: any) => {
@@ -73,6 +78,16 @@ export class CustomerComponent {
   openCustomer(name: string, surname: string, address: string){
     console.log("Customer clicked! Name: ", name, " surname: ", surname, " address: ", address)
     this.customerModal = true;
+  }
+
+  placeOrder(){
+    this.placeOrderModal = !this.placeOrderModal
+    this.checkOrdersModal = !this.checkOrdersModal
+  }
+
+  checkOrders(){
+    this.checkOrdersModal = !this.checkOrdersModal
+    this.placeOrderModal = !this.placeOrderModal
   }
 
 }
