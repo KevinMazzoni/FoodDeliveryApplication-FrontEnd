@@ -1,0 +1,29 @@
+.list{
+    border-style: groove;
+    border-radius: 10px;
+}
+
+.big-container{
+    margin-bottom: 20px;
+}
+
+.quantity{
+    width: 50%;
+    border-radius: 10px;
+}
+
+.legend{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.field{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.field:hover{
+    background-color: rgba(0, 173, 23, 0.646);
+}
+

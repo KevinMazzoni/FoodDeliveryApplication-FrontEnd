@@ -1,0 +1,36 @@
+<div class="container big-container">
+    <!--TITLE-->
+    <div class="row">
+        <div class="col-12">
+            Orders
+        </div>
+    </div>
+    <!--ORDERS PART-->
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 list">
+            <div class="container subcontainer">
+                <!--LEGEND-->
+                <div class="row legend">
+                    <div class="col-8">
+                        Item name
+                    </div>
+                    <div class="col-4">
+                        Quantity requested
+                    </div>
+                </div>
+                <hr>
+                <!--EFFECTIVE FIELDS-->
+                <div class="row field" *ngFor="let order of orders[0].items; index as i">
+                    <div class="col-8">
+                        {{order.item_id.name}}
+                    </div>
+                    <div class="col-4">
+                        {{order.item_id.quantity}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

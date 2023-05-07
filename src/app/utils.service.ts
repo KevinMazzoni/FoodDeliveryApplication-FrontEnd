@@ -10,6 +10,7 @@ export class UtilsService {
 
   getCustomersURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/demo';
   getItemsURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/items';
+  getOrdersURL: string = 'https://'
   newCustomerURL: string = 'https://';
   newOrderURL: string = 'https://';
 
@@ -22,6 +23,10 @@ export class UtilsService {
   /** GET: get items from the Back-End */
   getItems(){
     return this.httpClient.get(this.getItemsURL)
+  }
+  /** GET: get orders from the Back-End */
+  getOrders(){
+    return this.httpClient.get(this.getOrdersURL)
   }
   /** POST: add a new customer */
   newCustomer(customer: Customer): Observable<Customer>{

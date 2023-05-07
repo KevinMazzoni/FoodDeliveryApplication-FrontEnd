@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="row customers" *ngIf="!registrationModal && !customerModal">
-        <!--All the customers-->
+        <!--ALL THE CUSTOMERS-->
         <div *ngFor="let customer of customers" class="col-3">
             <!-- <div class="col-11 customer">
                 <img src="../../../assets/person.png" class="person">
@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <!--Specific customer-->
+    <!--SPECIFIC CUSTOMER-->
     <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">
         <div class="col-12 welcome">
             Welcome {{actualCustomer.customer_id.name}}, select if you want to place orders or check the status of your orders
@@ -34,12 +34,20 @@
         </div>
     </div>
 
+    <!--PLACE ORDERS MODAL-->
     <div class="row" *ngIf="placeOrderModal">
         <div class="col-12">
             <items [actualCustomer] = "actualCustomer"></items>
         </div>
-        <div class="col-12">
+        <!-- <div class="col-12">
 
+        </div> -->
+    </div>
+
+    <!--CHECK ORDERS MODAL-->
+    <div class="row" *ngIf="checkOrdersModal">
+        <div class="col-12">
+            <orders [actualCustomer] = "actualCustomer"></orders>
         </div>
     </div>
 
