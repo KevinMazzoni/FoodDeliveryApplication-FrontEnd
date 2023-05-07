@@ -1,0 +1,40 @@
+
+<div class="container big-container">
+    <div class="row">
+        <div class="col-12 welcome">
+            Welcome back delivery-man, below you can check shippings.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="container subcontainer">
+                <!--LEGEND-->
+                <div class="row">
+                    <div class="col-8">
+                        Order #
+                    </div>
+                    <div class="col-4">
+                        Delivered
+                    </div>
+                </div>
+                <hr>
+                <div class="row item" *ngFor="let order of ordersArray; index as i">
+                    <div class="col-8 name">
+                        {{order.user_id}}
+                    </div>
+                    <div class="col-4">
+                        <input type="checkbox" name="delivered" class="delivered" [formControl]="deliveries[i]" (click)="checked()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row endrow">
+        <div class="col-12"></div>
+    </div>
+</div>

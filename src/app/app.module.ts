@@ -13,6 +13,7 @@ import { CustomerPageComponent } from './cards/customer/customer-page/customer-p
 import { ItemsComponent } from './cards/customer/items/items.component';
 import { OrdersComponent } from './cards/customer/orders/orders.component';
 import { AdminComponent } from './cards/admin/admin.component';
+import { DeliveryManComponent } from './cards/delivery-man/delivery-man.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AdminComponent } from './cards/admin/admin.component';
     CustomerPageComponent,
     ItemsComponent,
     OrdersComponent,
-    AdminComponent
+    AdminComponent,
+    DeliveryManComponent
   ],
   imports: [
     BrowserModule,
