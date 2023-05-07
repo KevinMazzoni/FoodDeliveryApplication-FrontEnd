@@ -116,12 +116,17 @@
 
 .welcome{
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .order{
     border-radius: 10px;
     border-style: groove;
+    height: 65px;
+    line-height: 59px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
 }
 
 .order:hover{

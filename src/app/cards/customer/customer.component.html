@@ -21,12 +21,12 @@
     <!--SPECIFIC CUSTOMER-->
     <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">
         <div class="col-12 welcome">
-            Welcome {{actualCustomer.customer_id.name}}, select if you want to place orders or check the status of your orders
+            Welcome back {{actualCustomer.customer_id.name}}, select if you want to place an order or to check the status of your orders
         </div>
     </div>
     <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">
         <div class="col-5 order" (click)="placeOrder()">
-            Place order
+            Place an order
         </div>
         <div class="col-2"></div>
         <div class="col-5 order" (click)="checkOrders()">
