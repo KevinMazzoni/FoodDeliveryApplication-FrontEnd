@@ -23,9 +23,7 @@ export class CustomerComponent {
   surname = new FormControl('')
   address = new FormControl('')
 
-  actualName: string = ''
-  actualSurname: string = ''
-  actualAddress: string = ''
+  actualCustomer: any
 
   constructor(private utilsService: UtilsService){}
 
@@ -83,9 +81,14 @@ export class CustomerComponent {
 
   openCustomer(name: string, surname: string, address: string){
     console.log("Customer clicked! Name: ", name, " surname: ", surname, " address: ", address)
-    this.actualName = name
-    this.actualSurname = surname
-    this.actualAddress = address
+    this.actualCustomer = {
+      customer_id:
+      {
+          name: name,
+          surname: surname,
+          address: address
+      }
+    };
     this.customerModal = true
   }
 

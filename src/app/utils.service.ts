@@ -29,8 +29,8 @@ export class UtilsService {
     return this.httpClient.post<Customer>(this.newCustomerURL, customer)
   }
   /** POST: add a new item */
-  newOrder(order: Order): Observable<Order>{
+  newOrder(order: Order)/*: Observable<Order>*/{
     console.log("Ricevuto order: ", order)
-    return this.httpClient.post<Order>(this.newOrderURL, order)
+    // return this.httpClient.post<Order>(this.newOrderURL, order)
   }
 }

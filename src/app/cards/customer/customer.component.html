@@ -21,7 +21,7 @@
     <!--Specific customer-->
     <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">
         <div class="col-12 welcome">
-            Welcome {{actualName}}, select if you want to place orders or check the status of your orders
+            Welcome {{actualCustomer.customer_id.name}}, select if you want to place orders or check the status of your orders
         </div>
     </div>
     <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">
@@ -36,7 +36,7 @@
 
     <div class="row" *ngIf="placeOrderModal">
         <div class="col-12">
-            <items></items>
+            <items [actualCustomer] = "actualCustomer"></items>
         </div>
         <div class="col-12">
 
