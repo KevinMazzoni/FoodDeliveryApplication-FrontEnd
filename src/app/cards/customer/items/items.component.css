@@ -3,11 +3,60 @@
     border-radius: 10px;
 }
 
+.big-container{
+    margin-bottom: 20px;
+}
+
 .quantity{
     width: 50%;
     border-radius: 10px;
 }
 
+.legend{
+    margin-top: 10px;
+    text-align: center;
+}
+
 .field{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.field:hover{
+    background-color: rgba(0, 173, 23, 0.646);
+}
+
+.buttons-row{
+    margin-top: 20px;
+    text-align: center;
+    height: 60px;
+}
+
+.submit-button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(0, 137, 18, 0.646);
+}
+
+.submit-button:hover{
+    cursor: pointer;
+    color: rgba(0, 137, 18, 0.646);
+    background-color: white;
+}
+
+.clear-button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(188, 5, 5, 0.69);
+}
+
+.clear-button:hover{
+    cursor: pointer;
+    color: rgba(188, 5, 5, 0.69);
+    background-color: white
 }

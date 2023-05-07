@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input } from '@angular/core';
 import { FormControl, FormControlName } from '@angular/forms';
 import { UtilsService } from 'src/app/utils.service';
-import { Customer } from './customerInterface';
+import { Customer } from '../../shared/customerInterface';
 
 @Component({
   selector: 'customer',
@@ -19,9 +19,13 @@ export class CustomerComponent {
 
   @Input() cardChanged: EventEmitter<any> = new EventEmitter()
 
-  name = new FormControl('');
-  surname = new FormControl('');
-  address = new FormControl('');
+  name = new FormControl('')
+  surname = new FormControl('')
+  address = new FormControl('')
+
+  actualName: string = ''
+  actualSurname: string = ''
+  actualAddress: string = ''
 
   constructor(private utilsService: UtilsService){}
 
@@ -29,6 +33,8 @@ export class CustomerComponent {
     this.cardChanged.subscribe(response => {
       this.registrationModal = false
       this.customerModal = false
+      this.placeOrderModal = false
+      this.checkOrdersModal = false
       this.name.setValue('');
       this.surname.setValue('');
       this.address.setValue('');
@@ -77,17 +83,20 @@ export class CustomerComponent {
 
   openCustomer(name: string, surname: string, address: string){
     console.log("Customer clicked! Name: ", name, " surname: ", surname, " address: ", address)
-    this.customerModal = true;
+    this.actualName = name
+    this.actualSurname = surname
+    this.actualAddress = address
+    this.customerModal = true
   }
 
   placeOrder(){
-    this.placeOrderModal = !this.placeOrderModal
-    this.checkOrdersModal = !this.checkOrdersModal
+    this.placeOrderModal = true
+    this.checkOrdersModal = false
   }
 
   checkOrders(){
-    this.checkOrdersModal = !this.checkOrdersModal
-    this.placeOrderModal = !this.placeOrderModal
+    this.checkOrdersModal = true
+    this.placeOrderModal = false
   }
 
 }

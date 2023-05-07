@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Customer } from '../customerInterface'
+import { Customer } from '../../../shared/customerInterface'
 
 @Component({
   selector: 'customer-card',

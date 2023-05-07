@@ -1,36 +1,60 @@
-<div class="container">
+<div class="container big-container">
+    <!--TITLE-->
     <div class="row">
         <div class="col-12">
             Items
         </div>
     </div>
+    <!--ITEMS PART-->
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6 list">
-            <div class="container">
+            <div class="container subcontainer">
                 <!--LEGEND-->
-                <div class="row">
-                    <div class="col-5">
+                <div class="row legend">
+                    <div class="col-4">
                         Item name
                     </div>
                     <div class="col-4">
                         Select quantity
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         Max availability
                     </div>
                 </div>
                 <hr>
                 <!--EFFECTIVE FIELDS-->
-                <div class="row field" *ngFor="let item of items">
-                    <div class="col-5">
+                <div class="row field" *ngFor="let item of items; index as i">
+                    <div class="col-4">
                         {{item['item_id']['name']}}
                     </div>
                     <div class="col-4">
-                        <input type="number" name="quantity" class="quantity">
+                        <input type="number" name="quantity" class="quantity" [formControl]="quantities[i]">
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         Available: {{item['item_id']['quantity']}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <!--BUTTONS-->
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="container">
+                <div class="row buttons-row">
+                    <div class="col-4">
+                        <button type="button" class="submit-button" (click)="submit()">
+                            Submit
+                        </button>
+                    </div>
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <button type="button" class="clear-button" (click)="clear()">
+                            Clear
+                        </button>
                     </div>
                 </div>
             </div>
