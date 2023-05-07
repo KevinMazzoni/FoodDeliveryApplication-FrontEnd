@@ -3,16 +3,17 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Customer } from './shared/customerInterface';
-import { Order } from './shared/orderInterface';
+import { Item, Order } from './shared/orderInterface';
 
 @Injectable()
 export class UtilsService {
 
   getCustomersURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/demo';
   getItemsURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/items';
-  getOrdersURL: string = 'https://'
+  getOrdersURL: string = 'https://';
   newCustomerURL: string = 'https://';
   newOrderURL: string = 'https://';
+  updateItemsURL: string = 'https://';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -37,5 +38,10 @@ export class UtilsService {
   newOrder(order: Order)/*: Observable<Order>*/{
     console.log("Ricevuto order: ", order)
     // return this.httpClient.post<Order>(this.newOrderURL, order)
+  }
+  /** PUT: update items by admin */
+  updateItems(items: Item[]){
+    console.log("Updated items:", items)
+    // return this.httpClient.put(this.updateItemsURL, items)
   }
 }

@@ -1,0 +1,54 @@
+
+<div class="container big-container">
+    <div class="row">
+        <div class="col-12 welcome">
+            Welcome back admin, below you can change availability of items.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="container subcontainer">
+                <!--LEGEND-->
+                <div class="row">
+                    <div class="col-8">
+                        Item name
+                    </div>
+                    <div class="col-4">
+                        Availability
+                    </div>
+                </div>
+                <hr>
+                <div class="row item" *ngFor="let item of itemsArray; index as i">
+                    <div class="col-8 name">
+                        {{item.item_id.name}}
+                    </div>
+                    <div class="col-4">
+                        <input type="number" name="quantity" class="quantity" [formControl]="quantities[i]">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row endrow">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <button type="button" class="submit-button" (click)="update()">
+                            Update
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

@@ -103,7 +103,8 @@
 
 .exit-button:hover{
     cursor: pointer;
-    background-color: rgba(255, 0, 0, 0.64);
+    /* background-color: rgba(255, 0, 0, 0.64); */
+    background-color: rgba(188, 5, 5, 0.69);;
 }
 
 /*Specific customer*/

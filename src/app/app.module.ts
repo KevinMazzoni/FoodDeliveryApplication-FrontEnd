@@ -12,6 +12,7 @@ import { UtilsService } from './utils.service';
 import { CustomerPageComponent } from './cards/customer/customer-page/customer-page.component';
 import { ItemsComponent } from './cards/customer/items/items.component';
 import { OrdersComponent } from './cards/customer/orders/orders.component';
+import { AdminComponent } from './cards/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { OrdersComponent } from './cards/customer/orders/orders.component';
     CustomerCardComponent,
     CustomerPageComponent,
     ItemsComponent,
-    OrdersComponent
+    OrdersComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
