@@ -8,7 +8,10 @@ import { Item, Order } from './shared/orderInterface';
 @Injectable()
 export class UtilsService {
 
-  getCustomersURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/demo';
+  // getCustomersURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/demo';
+  // getCustomersURL: string = '/api/';
+  getCustomersURL: string = 'http://localhost:8000/customers';
+
   getItemsURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/items';
   getOrdersURL: string = 'https://';
   newCustomerURL: string = 'https://';
@@ -19,7 +22,7 @@ export class UtilsService {
 
   /** GET: get customers from the Back-End */
   getCustomers(){
-    return this.httpClient.get<Customer>(this.getCustomersURL)
+    return this.httpClient.get(this.getCustomersURL)
   }
   /** GET: get items from the Back-End */
   getItems(){

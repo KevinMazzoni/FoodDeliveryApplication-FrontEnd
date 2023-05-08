@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, EventEmitter, Input } from '@angular/core';
 import { FormControl, FormControlName } from '@angular/forms';
 import { UtilsService } from 'src/app/utils.service';
@@ -39,10 +40,12 @@ export class CustomerComponent {
     });
 
     this.utilsService.getCustomers().subscribe((response: any) => {
-      console.log("Customers: ", response)
-      this.customers = response.customers
+      // this.customers = Object.values(response)
+      // var prova = JSON.parse(String.fromCharCode(...response))
+      this.customers = response['customers']
+      console.log("Customers: ", this.customers)
     });
-    console.log("onInit detected")
+    
   }
 
   ngOnChanges(){
