@@ -14,7 +14,7 @@ export class UtilsService {
 
   getItemsURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/items';
   getOrdersURL: string = 'https://';
-  newCustomerURL: string = 'https://';
+  newCustomerURL: string = 'http://localhost:8000/new-customer';
   newOrderURL: string = 'https://';
   updateItemsURL: string = 'https://';
 
@@ -22,7 +22,7 @@ export class UtilsService {
 
   /** GET: get customers from the Back-End */
   getCustomers(){
-    return this.httpClient.get(this.getCustomersURL)
+    return this.httpClient.get<Customer>(this.getCustomersURL)
   }
   /** GET: get items from the Back-End */
   getItems(){

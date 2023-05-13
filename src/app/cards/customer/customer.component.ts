@@ -12,6 +12,8 @@ import { Customer } from '../../shared/customerInterface';
 export class CustomerComponent {
 
   customers: Array<Customer> = []
+  // customers: Array<any> = []
+  // customers: any
   registrationModal = false
   customerModal = false
   placeOrderModal = false
@@ -25,10 +27,13 @@ export class CustomerComponent {
   address = new FormControl('')
 
   actualCustomer: any
+  // showCustomers = false
 
   constructor(private utilsService: UtilsService){}
 
   ngOnInit(){
+    // this.showCustomers = false
+
     this.cardChanged.subscribe(response => {
       this.registrationModal = false
       this.customerModal = false
@@ -40,12 +45,17 @@ export class CustomerComponent {
     });
 
     this.utilsService.getCustomers().subscribe((response: any) => {
-      // this.customers = Object.values(response)
+      // this.customers = Object.values(response.customers)
       // var prova = JSON.parse(String.fromCharCode(...response))
-      this.customers = response['customers']
+      // this.customers = response.customers
+      // console.log("JSON.parse: ", JSON.parse(this.customers.toString()))
+      // console.log("response: ", Object.values(response))
+      this.customers = response.customers
+      console.log("response: ", response)
       console.log("Customers: ", this.customers)
+      // this.showCustomers = true;
     });
-    
+
   }
 
   ngOnChanges(){
@@ -66,6 +76,7 @@ export class CustomerComponent {
     this.registrationModal = false
   }
 
+
   submit(){
     //TODO
     console.log("Submit button clicked\nname: ", this.name.getRawValue(), "\nsurname: ", this.surname.getRawValue(), "\naddress: ", this.address.getRawValue())
@@ -73,12 +84,11 @@ export class CustomerComponent {
     //Agganciare APi
     this.utilsService.newCustomer(
       {
-        customer_id: {
           name: this.name.getRawValue() || '',
           surname: this.surname.getRawValue() || '',
-          address: this.address.getRawValue() || ''
+          address: this.address.getRawValue() || '',
+          id: -1
         }
-      }
     ).subscribe((response: any) => console.log(response))
   }
 

@@ -2,17 +2,18 @@
 <div class="container">
     <div class="row customers" *ngIf="!registrationModal && !customerModal">
         <!--ALL THE CUSTOMERS-->
-        <div *ngFor="let customer of customers" class="col-3">
+        <div *ngFor="let customer of customers; index as i" class="col-3">
             <!-- <div class="col-11 customer">
                 <img src="../../../assets/person.png" class="person">
                 Name: {{customer.name}} | Surname: {{customer.surname}} | Address: {{customer.address}}
             </div> -->
             <!-- <a routerLink="/customer-page" routerLinkActive="active" ariaCurrentWhenActive="page"> -->
+            <!-- {{customer| json}} -->
             <customer-card class="customer-card" tabindex="-1"
-                [name]="customer.customer_id.name"
-                [surname]="customer.customer_id.surname"
-                [address]="customer.customer_id.address"
-                (click)="openCustomer(customer.customer_id.name, customer.customer_id.surname, customer.customer_id.address)">
+                [name]="customer.name"
+                [surname]="customer.surname"
+                [address]="customer.address"
+                (click)="openCustomer(customer.name, customer.surname, customer.address)">
             </customer-card>
             <!-- </a> -->
         </div>
