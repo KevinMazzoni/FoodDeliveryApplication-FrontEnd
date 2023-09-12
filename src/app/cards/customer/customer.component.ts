@@ -33,6 +33,7 @@ export class CustomerComponent {
 
   ngOnInit(){
     // this.showCustomers = false
+    console.log("On init !!!!!")
 
     this.cardChanged.subscribe(response => {
       this.registrationModal = false
@@ -89,7 +90,20 @@ export class CustomerComponent {
           address: this.address.getRawValue() || '',
           id: -1
         }
-    ).subscribe((response: any) => console.log(response))
+    ).subscribe((response: any) => console.log(response));
+
+    this.utilsService.getCustomers().subscribe((response: any) => {
+      // this.customers = Object.values(response.customers)
+      // var prova = JSON.parse(String.fromCharCode(...response))
+      // this.customers = response.customers
+      // console.log("JSON.parse: ", JSON.parse(this.customers.toString()))
+      // console.log("response: ", Object.values(response))
+      this.customers = response.customers
+      console.log("response: ", response)
+      console.log("Customers: ", this.customers)
+      // this.showCustomers = true;
+    });
+    
   }
 
   openCustomer(name: string, surname: string, address: string){
