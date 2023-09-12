@@ -18,26 +18,10 @@ export class DeliveryManComponent {
       user_id: 1,
       items: [
         {
-          item_id:
-          {
-            quantity: 4,
-            name: 'fragole'
+          quantity: 4,
+          name: 'fragole',
+          id: '1'
           }
-        },
-        {
-          item_id:
-          {
-            quantity: 17,
-            name: 'lamponi'
-          }
-        },
-        {
-          item_id:
-          {
-            quantity: 23,
-            name: 'more'
-          }
-        },
 
       ]
     },
@@ -46,26 +30,10 @@ export class DeliveryManComponent {
       user_id: 2,
       items: [
         {
-          item_id:
-          {
-            quantity: 13,
-            name: 'mazze'
+          quantity: 4,
+          name: 'fragole',
+          id: '1'
           }
-        },
-        {
-          item_id:
-          {
-            quantity: 10,
-            name: 'telefoni'
-          }
-        },
-        {
-          item_id:
-          {
-            quantity: 2,
-            name: 'tappeti'
-          }
-        },
 
       ]
     },
@@ -74,26 +42,10 @@ export class DeliveryManComponent {
       user_id: 3,
       items: [
         {
-          item_id:
-          {
-            quantity: 3,
-            name: 'ceramiche'
+          quantity: 4,
+          name: 'fragole',
+          id: '1'
           }
-        },
-        {
-          item_id:
-          {
-            quantity: 87,
-            name: 'lampioni'
-          }
-        },
-        {
-          item_id:
-          {
-            quantity: 12,
-            name: 'zaini'
-          }
-        },
 
       ]
     },

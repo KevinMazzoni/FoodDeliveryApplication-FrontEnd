@@ -23,10 +23,10 @@
                 <!--EFFECTIVE FIELDS-->
                 <div class="row field" *ngFor="let order of orders[0].items; index as i">
                     <div class="col-8">
-                        {{order.item_id.name}}
+                        {{order.name}}
                     </div>
                     <div class="col-4">
-                        {{order.item_id.quantity}}
+                        {{order.quantity}}
                     </div>
                 </div>
             </div>

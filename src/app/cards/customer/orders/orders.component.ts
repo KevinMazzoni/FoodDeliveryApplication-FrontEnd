@@ -14,33 +14,10 @@ export class OrdersComponent {
       user_id: 1,
       items: [
         {
-          item_id: 
-          {
-            quantity: 4,
-            name: 'fragole'
+          quantity: 4,
+          name: 'fragole',
+          id: '1'
           }
-        },
-        {
-          item_id: 
-          {
-            quantity: 10,
-            name: 'banane'
-          }
-        },
-        {
-          item_id: 
-          {
-            quantity: 57,
-            name: 'lamponi'
-          }
-        },
-        {
-          item_id: 
-          {
-            quantity: 7,
-            name: 'kiwi'
-          }
-        },
       ]
     }
   ]

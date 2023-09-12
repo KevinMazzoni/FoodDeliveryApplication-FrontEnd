@@ -21,10 +21,11 @@
                 <hr>
                 <div class="row item" *ngFor="let item of itemsArray; index as i">
                     <div class="col-8 name">
-                        {{item.item_id.name}}
+                        {{item.name}}
                     </div>
                     <div class="col-4">
                         <input type="number" name="quantity" class="quantity" [formControl]="quantities[i]">
+
                     </div>
                 </div>
                 <div class="row">

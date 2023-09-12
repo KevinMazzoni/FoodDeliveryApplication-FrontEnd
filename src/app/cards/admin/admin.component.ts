@@ -14,47 +14,41 @@ export class AdminComponent {
 
   itemsArray: Array<Item> = [
     {
-      item_id:
-      {
-        quantity: 4,
-        name: 'fragole'
+      quantity: 4,
+      name: 'fragole',
+      id: '1'
       }
-    },
+    ,
     {
-      item_id:
-      {
-        quantity: 17,
-        name: 'lamponi'
-      }
-    },
+      quantity: 17,
+      name: 'lamponi',
+      id: '1'
+    }
+    ,
     {
-      item_id:
-      {
-        quantity: 23,
-        name: 'more'
-      }
-    },
+      quantity: 23,
+      name: 'more',
+      id: '1'
+    }
+    ,
     {
-      item_id:
-      {
-        quantity: 43,
-        name: 'rose'
-      }
-    },
+      quantity: 43,
+      name: 'rose',
+      id: '1'
+    }
+    ,
     {
-      item_id:
-      {
-        quantity: 23,
-        name: 'kiwi'
-      }
-    },
+      quantity: 23,
+      name: 'kiwi',
+      id: '1'
+    }
+    ,
     {
-      item_id:
-      {
-        quantity: 7,
-        name: 'banane'
-      }
-    },
+      quantity: 7,
+      name: 'banane',
+      id: '1'
+    }
+    
   ]
 
   constructor(private utilsService: UtilsService){
@@ -63,32 +57,51 @@ export class AdminComponent {
 
   ngOnInit(){
     //TODO real get
-    // this.utilsService.getItems().subscribe( (response: any) => 
-    // {
+    this.itemsArray = []
+    console.log("ItemsArray1: ", this.itemsArray)
 
-    // })
-    this.quantities = []
+
+    this.utilsService.getItems().subscribe((response: any) => {
+    
+      console.log("Response: ", response['items'][0]['id'])
+   
+      // for(let i = 0; i < response.length; i++){
+
+      //   this.itemsArray.push(response['items'][i])
+      // }
+      this.itemsArray = response.items
+      console.log("ItemsArray2: ", this.itemsArray)
+
+      this.quantities = []
 
     for(let i = 0; i < this.itemsArray.length; i++){
-      let quantity = new FormControl(this.itemsArray[i].item_id.quantity)
+      let quantity = new FormControl(this.itemsArray[i].quantity)
       this.quantities.push(quantity)
     }
 
     console.log("Quantities: ", this.quantities)
+    })
+ 
+
+    
   }
 
   update(){
-    //TODO
-    //subscribe to updateItems
+    // TODO
+    // subscribe to updateItems
     let updatedItemsArray: Array<Item> = []
     for(let i = 0; i < this.itemsArray.length; i++){
       updatedItemsArray.push({
-        item_id: {
+        
           quantity: this.quantities[i].getRawValue(),
-          name: this.itemsArray[i].item_id.name
-        }
+          name: this.itemsArray[i].name,
+          id: this.itemsArray[i].id
+        
       })
     }
-    this.utilsService.updateItems(updatedItemsArray)
+    this.utilsService.updateItems(updatedItemsArray).subscribe((response: any) => {})
+      // this.utilsService.getItems().subscribe((response: any) => { 
+      //   console.log("Response: ", response)
+      // })
   }
 }

@@ -12,11 +12,11 @@ export class UtilsService {
   // getCustomersURL: string = '/api/';
   getCustomersURL: string = 'http://localhost:8000/customers';
 
-  getItemsURL: string = 'https://4202c383-5f43-4488-850e-82c95f021f2a.mock.pstmn.io/items';
+  getItemsURL: string = 'http://localhost:8001/items';
   getOrdersURL: string = 'https://';
   newCustomerURL: string = 'http://localhost:8000/new-customer';
   newOrderURL: string = 'https://';
-  updateItemsURL: string = 'https://';
+  updateItemsURL: string = 'http://localhost:8001/update-items';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,6 +25,7 @@ export class UtilsService {
     return this.httpClient.get<Customer>(this.getCustomersURL)
   }
   /** GET: get items from the Back-End */
+  
   getItems(){
     return this.httpClient.get(this.getItemsURL)
   }
@@ -45,6 +46,7 @@ export class UtilsService {
   /** PUT: update items by admin */
   updateItems(items: Item[]){
     console.log("Updated items:", items)
-    // return this.httpClient.put(this.updateItemsURL, items)
+    
+    return this.httpClient.put(this.updateItemsURL, items )
   }
 }

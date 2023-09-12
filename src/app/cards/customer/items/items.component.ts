@@ -32,34 +32,34 @@ export class ItemsComponent {
   }
 
   submit(){
-    var canSubmit = true;
-    for(let i = 0; i < this.quantities.length; i++){
-      if(this.quantities[i].getRawValue() > this.items[i].item_id.quantity){
-        canSubmit = false
-      }
-    }
-    if(canSubmit){
-      let itemsSelected: Array<Item> = []
+    // var canSubmit = true;
+    // for(let i = 0; i < this.quantities.length; i++){
+    //   if(this.quantities[i].getRawValue() > this.items[i].quantity){
+    //     canSubmit = false
+    //   }
+    // }
+    // if(canSubmit){
+    //   let itemsSelected: Array<Item> = []
 
-      for(let i = 0; i < this.quantities.length; i++){
-        itemsSelected.push({
-          item_id:
-          {
-            quantity: this.quantities[i].getRawValue(),
-            name: this.items[i].item_id.name
-          }
-        })
-      }
+    //   for(let i = 0; i < this.quantities.length; i++){
+    //     itemsSelected.push({
+    //       {
+    //         quantity: this.quantities[i].getRawValue(),
+    //         name: this.items[i]name,
+    //         id: this.items[i].id,
+    //       }         
+    //     })
+    //   }
       
-      let order: Order = {
-        user_id: this.actualCustomer.customer_id,
-        items: itemsSelected
-      }
+    //   let order: Order = {
+    //     user_id: this.actualCustomer.customer_id,
+    //     items: itemsSelected
+    //   }
 
-      //TODO
-      //Subscribe del new order a servizio attivo
-      this.utilsService.newOrder(order)
-    }
+    //   //TODO
+    //   //Subscribe del new order a servizio attivo
+    //   this.utilsService.newOrder(order)
+    // }
   }
 
   clear(){

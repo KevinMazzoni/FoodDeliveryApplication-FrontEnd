@@ -6,10 +6,13 @@ export interface Customer {
 }
 
 export interface Item {
-    item_id: {
         quantity: number,
-        name: string
-    }
+        name: string,
+        id: string
+}
+
+export interface ItemPut {
+        items: Item[]
 }
 
 export interface Order {
