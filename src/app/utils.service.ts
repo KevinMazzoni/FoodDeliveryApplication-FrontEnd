@@ -13,7 +13,7 @@ export class UtilsService {
   getCustomersURL: string = 'http://localhost:8000/customers';
 
   getItemsURL: string = 'http://localhost:8001/items';
-  getOrdersURL: string = 'https://';
+  getOrdersURL: string = 'http://localhost:8002/orders';
   newCustomerURL: string = 'http://localhost:8000/new-customer';
   newOrderURL: string = 'https://';
   updateItemsURL: string = 'http://localhost:8001/update-items';
@@ -27,11 +27,11 @@ export class UtilsService {
   /** GET: get items from the Back-End */
   
   getItems(){
-    return this.httpClient.get(this.getItemsURL)
+    return this.httpClient.get<Item>(this.getItemsURL)
   }
   /** GET: get orders from the Back-End */
   getOrders(){
-    return this.httpClient.get(this.getOrdersURL)
+    return this.httpClient.get<Order>(this.getOrdersURL)
   }
   /** POST: add a new customer */
   newCustomer(customer: Customer): Observable<Customer>{
