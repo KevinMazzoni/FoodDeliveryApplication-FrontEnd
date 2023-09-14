@@ -12,44 +12,7 @@ export class DeliveryManComponent {
   registrationModal = false
   deliveries: Array<FormControl> = [];
 
-  ordersArray: Array<Order> = [
-    //First order
-    {
-      user_id: 1,
-      items: [
-        {
-          quantity: 4,
-          name: 'fragole',
-          id: '1'
-          }
-
-      ]
-    },
-    //Second order
-    {
-      user_id: 2,
-      items: [
-        {
-          quantity: 4,
-          name: 'fragole',
-          id: '1'
-          }
-
-      ]
-    },
-    //Third order
-    {
-      user_id: 3,
-      items: [
-        {
-          quantity: 4,
-          name: 'fragole',
-          id: '1'
-          }
-
-      ]
-    },
-  ]
+  ordersArray: Array<Order> = []
 
   constructor(private utilsService: UtilsService){
 
@@ -57,23 +20,42 @@ export class DeliveryManComponent {
 
   ngOnInit(){
     //TODO real get
-    // this.utilsService.getItems().subscribe( (response: any) => 
-    // {
+    this.utilsService.getOrders().subscribe( (response: any) => 
+    {
+      console.log("Response: ", response)
+      for(const order in response.orders){
+        this.deliveries.push(new FormControl(false))
+      }
+      this.ordersArray = response.orders
+      console.log("Deliveries: ", this.deliveries)
+      console.log("OrdersArray: ", this.ordersArray)
+      // this.ordersArray = response
+    })
 
     // })
-    this.deliveries = []
 
-    for(let i = 0; i < this.ordersArray.length; i++){
-      let delivery = new FormControl(false)
-      this.deliveries.push(delivery)
-    }
 
-    console.log("Deliveries: ", this.deliveries)
+    // for(let i = 0; i < this.ordersArray.length; i++){
+    //   let delivery = new FormControl(false)
+    //   this.deliveries.push(delivery)
+    // }
+ 
   }
 
   checked(){
-    //TODO
+  
+
+
+    for(let i = 0; i < this.deliveries.length; i++){
+      if(this.deliveries[i].value){
+
+      console.log("Delivery ",i, " is true ")
+      console.log("Order: ", this.ordersArray[i].id)
+      this.utilsService.updateDelivery(this.ordersArray[i].id).subscribe((response: any) => {
+        console.log("Response: ", response)
+      })
+    }}
     //PUT method
-    console.log("Checked a checkbox")
+    // console.log("Checked a checkbox")
   }
 }

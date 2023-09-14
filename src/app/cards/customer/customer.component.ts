@@ -51,6 +51,7 @@ export class CustomerComponent {
       // this.customers = response.customers
       // console.log("JSON.parse: ", JSON.parse(this.customers.toString()))
       // console.log("response: ", Object.values(response))
+
       this.customers = response.customers
       console.log("response: ", response)
       console.log("Customers: ", this.customers)
@@ -106,15 +107,15 @@ export class CustomerComponent {
     
   }
 
-  openCustomer(name: string, surname: string, address: string){
-    console.log("Customer clicked! Name: ", name, " surname: ", surname, " address: ", address)
+  openCustomer(name: string, surname: string, address: string, id:number){
+    console.log("Customer clicked! name: ", name, " surname: ", surname, " address: ", address, " id: ", id)
     this.actualCustomer = {
-      customer_id:
-      {
+     
           name: name,
           surname: surname,
-          address: address
-      }
+          address: address,
+          id: id
+      
     };
     this.customerModal = true
   }

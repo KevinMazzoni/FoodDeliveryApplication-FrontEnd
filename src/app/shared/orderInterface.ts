@@ -17,5 +17,8 @@ export interface ItemPut {
 
 export interface Order {
         user_id: number,
-        items: Item[]
+        items: Item[],
+        id: string,
+        status: string
+
 }

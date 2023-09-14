@@ -13,7 +13,7 @@
                 [name]="customer.name"
                 [surname]="customer.surname"
                 [address]="customer.address"
-                (click)="openCustomer(customer.name, customer.surname, customer.address)">
+                (click)="openCustomer(customer.name, customer.surname, customer.address, customer.id)">
             </customer-card>
             <!-- </a> -->
         </div>
@@ -22,7 +22,7 @@
     <!--SPECIFIC CUSTOMER-->
     <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">
         <div class="col-12 welcome">
-            Welcome back {{actualCustomer.customer_id.name}}, select if you want to place an order or to check the status of your orders
+            Welcome back {{actualCustomer.name}}, select if you want to place an order or to check the status of your orders
         </div>
     </div>
     <div class="row specific-customer-row" *ngIf="!registrationModal && customerModal">

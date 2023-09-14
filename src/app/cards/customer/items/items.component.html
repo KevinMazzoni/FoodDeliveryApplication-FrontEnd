@@ -26,13 +26,13 @@
                 <!--EFFECTIVE FIELDS-->
                 <div class="row field" *ngFor="let item of items; index as i">
                     <div class="col-4">
-                        {{item['item_id']['name']}}
+                        {{item.name}}
                     </div>
                     <div class="col-4">
                         <input type="number" name="quantity" class="quantity" [formControl]="quantities[i]">
                     </div>
                     <div class="col-4">
-                        Available: {{item['item_id']['quantity']}}
+                        Available: {{item.quantity}}
                     </div>
                 </div>
             </div>

@@ -12,23 +12,38 @@
             <div class="container subcontainer">
                 <!--LEGEND-->
                 <div class="row legend">
-                    <div class="col-8">
+                    <div class="col-4">
                         Item name
                     </div>
                     <div class="col-4">
                         Quantity requested
                     </div>
+                    <div class="col-4">
+                        Status
                 </div>
                 <hr>
-                <!--EFFECTIVE FIELDS-->
-                <!-- <div class="row field" *ngFor="let order of orders[0].items; index as i">
-                    <div class="col-8">
-                        {{order.name}}
+                <!-- EFFECTIVE FIELDS-->
+                <div class="row field" *ngFor="let order of orders; index as i">
+                    <div class="col-4">
                     </div>
                     <div class="col-4">
-                        {{order.quantity}}
+                        Order number {{i+1}}
                     </div>
-                </div> -->
+                    <div class="col-4">
+                        {{order.status}}
+                    </div>
+
+                    <div class="row field" *ngFor="let item of order.items; index as j">
+
+                    <div class="col-4">
+                        {{item.name}}
+                    </div>
+                    <div class="col-4">
+                        {{item.quantity}}
+                    </div>
+                    
+
+                </div>
             </div>
         </div>
         <div class="col-3"></div>

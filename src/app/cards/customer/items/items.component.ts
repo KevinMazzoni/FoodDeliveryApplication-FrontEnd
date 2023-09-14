@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Order } from 'src/app/shared/orderInterface';
+import { Item, Order } from 'src/app/shared/orderInterface';
 import { UtilsService } from 'src/app/utils.service';
-import { Item } from '../../../shared/itemsInterface';
+// import { Item } from '../../../shared/itemsInterface';
 
 @Component({
   selector: 'items',
@@ -28,38 +28,48 @@ export class ItemsComponent {
         let quantity = new FormControl(0)
         this.quantities.push(quantity)
       }
+      console.log("Items: ", this.items)
     });
   }
 
   submit(){
-    // var canSubmit = true;
-    // for(let i = 0; i < this.quantities.length; i++){
-    //   if(this.quantities[i].getRawValue() > this.items[i].quantity){
-    //     canSubmit = false
-    //   }
+    var canSubmit = true;
+    for(let i = 0; i < this.quantities.length; i++){
+      if(this.quantities[i].getRawValue() > this.items[i].quantity){
+        canSubmit = false
+      }
+    }
+    // console.log("Quantities: ", this.items)
+    if(canSubmit){
+      let itemsSelected: Array<Item> = []
+
+      for(let i = 0; i < this.quantities.length; i++){
+        itemsSelected.push({
+          
+            quantity: this.quantities[i].getRawValue(),
+            name: this.items[i].name,
+            id: this.items[i].id,
+        })
+      }
+
+      // let superItemsJson = {"items": itemsSelected }
+    console.log("Item Component customer: ", this.actualCustomer)
+      let order: Order = {
+        user_id: this.actualCustomer.id,
+        items: itemsSelected,
+        id: "cippalippa",
+        status: "pending"
+      }
+
+      console.log("Order: ", order)
     // }
-    // if(canSubmit){
-    //   let itemsSelected: Array<Item> = []
-
-    //   for(let i = 0; i < this.quantities.length; i++){
-    //     itemsSelected.push({
-    //       {
-    //         quantity: this.quantities[i].getRawValue(),
-    //         name: this.items[i]name,
-    //         id: this.items[i].id,
-    //       }         
-    //     })
-    //   }
-      
-    //   let order: Order = {
-    //     user_id: this.actualCustomer.customer_id,
-    //     items: itemsSelected
-    //   }
-
+      let superOrderJson = {"order": order}
     //   //TODO
     //   //Subscribe del new order a servizio attivo
-    //   this.utilsService.newOrder(order)
-    // }
+      this.utilsService.newOrder(superOrderJson).subscribe((response: any) => {
+        console.log("Response: ", response)
+      })
+    }
   }
 
   clear(){

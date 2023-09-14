@@ -58,43 +58,28 @@ export class AdminComponent {
   ngOnInit(){
     //TODO real get
     this.itemsArray = []
-    // console.log("ItemsArray1: ", this.itemsArray)
-    
-    this.utilsService.getItems().subscribe((response: any) => {
-      // this.customers = Object.values(response.customers)
-      // var prova = JSON.parse(String.fromCharCode(...response))
-      // this.customers = response.customers
-      // console.log("JSON.parse: ", JSON.parse(this.customers.toString()))
-      // console.log("response: ", Object.values(response))
-      
-      console.log("response: ", response)
-      
-      // this.showCustomers = true;
-    });
+    console.log("ItemsArray1: ", this.itemsArray)
 
 
     this.utilsService.getItems().subscribe((response: any) => {
     
-      console.log("Response della getItems: ", response);
-      // console.log("Response: ", response['items'][0]['id'])
+      console.log("Response: ", response['items'][0]['id'])
    
       // for(let i = 0; i < response.length; i++){
 
       //   this.itemsArray.push(response['items'][i])
       // }
+      this.itemsArray = response.items
+      console.log("ItemsArray2: ", this.itemsArray)
 
-      //Scommentare da qui
-    //   this.itemsArray = response.items
-    //   console.log("ItemsArray2: ", this.itemsArray)
+      this.quantities = []
 
-    //   this.quantities = []
+    for(let i = 0; i < this.itemsArray.length; i++){
+      let quantity = new FormControl(this.itemsArray[i].quantity)
+      this.quantities.push(quantity)
+    }
 
-    // for(let i = 0; i < this.itemsArray.length; i++){
-    //   let quantity = new FormControl(this.itemsArray[i].quantity)
-    //   this.quantities.push(quantity)
-    // }
-
-    // console.log("Quantities: ", this.quantities)
+    console.log("Quantities: ", this.quantities)
     })
  
 
@@ -114,7 +99,9 @@ export class AdminComponent {
         
       })
     }
-    this.utilsService.updateItems(updatedItemsArray).subscribe((response: any) => {})
+    let superItemsJson = {"items": updatedItemsArray}
+    console.log("Updated items: ", superItemsJson)
+    this.utilsService.updateItems(superItemsJson).subscribe((response: any) => {})
       // this.utilsService.getItems().subscribe((response: any) => { 
       //   console.log("Response: ", response)
       // })
